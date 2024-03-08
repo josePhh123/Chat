@@ -1,16 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package sockets.chat;
 
 import java.io.*;
 import java.net.Socket;
 
-/**
- *
- * @author cesar
- */
 public class Cliente implements Runnable{
     
     private int puerto;
@@ -20,8 +12,6 @@ public class Cliente implements Runnable{
         this.puerto = puerto;
         this.mensaje = mensaje;
     }
-    
-    
     
     @Override
     public void run(){

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package sockets.chat;
 
 import java.io.DataInputStream;
@@ -10,10 +6,6 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Observable;
 
-/**
- *
- * @author cesar
- */
 public class Servidor extends Observable implements Runnable{
     
     private final int puerto;
@@ -35,7 +27,7 @@ public class Servidor extends Observable implements Runnable{
 
             //Siempre se estara escuchando las peticiones
             while (true) {
-                //Se espera a que el cliente se contecte
+                //Se espera a que el cliente se conecte
                 socket = servidor.accept();
                 System.out.println("Cliente conectado");
                 entrada = new DataInputStream(socket.getInputStream());
@@ -51,6 +43,7 @@ public class Servidor extends Observable implements Runnable{
                 socket.close();
                 System.out.println("Cliente desconectado");
             }
+            
         } catch (IOException error) {
             System.out.println(error);
         }
