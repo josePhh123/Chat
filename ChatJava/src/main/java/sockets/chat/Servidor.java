@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package sockets.chat;
 
 import java.io.DataInputStream;
@@ -10,10 +6,6 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Observable;
 
-/**
- *
- * @author cesar
- */
 public class Servidor extends Observable implements Runnable{
     
     private final int puerto;

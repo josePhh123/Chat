@@ -1,24 +1,24 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package sockets.conexion;
-
 import java.sql.*;
 
-/**
- *
- * @author cesar
- */
 public class Conexion {
     
-    private static final String URL = "jdbc:mysql://localhost/chat";
-    private static final String USER = " ";
-    private static final String PASSWORD = " ";
+    private static final String URL = "jdbc:mysql://localhost:3308/chat";
+    //private static final String URL = "jdbc:mysql://localhost:3306/chat";
+    private static final String USER = "root";
+    private static final String PASSWORD = "admin1";
+    //private static final String PASSWORD = "root";
     private static Conexion instancia;
 
     public Connection conectar() throws SQLException {
-        return DriverManager.getConnection(URL, USER, PASSWORD);
+        try {
+            Connection conexion = DriverManager.getConnection(URL, USER, PASSWORD);
+            System.out.println("Conexión con la base de datos fue exitosa.");
+            return conexion;
+        } catch (SQLException error) {
+            System.out.println("Error al conectar con la base de datos: " + error.getMessage());
+            throw error;
+        }
     }
 
     public void cerrarResultado(ResultSet resultado) {
