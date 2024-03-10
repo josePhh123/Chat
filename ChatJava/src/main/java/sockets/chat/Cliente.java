@@ -5,8 +5,8 @@ import java.net.Socket;
 
 public class Cliente implements Runnable{
     
-    private int puerto;
-    private String mensaje;
+    private final int puerto;
+    private final String mensaje;
     
     public Cliente(int puerto, String mensaje){
         this.puerto = puerto;
